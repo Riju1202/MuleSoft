@@ -12,4 +12,9 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<set-payload value="#['Hello World']" doc:name="Set Payload" doc:id="5558b42a-685f-48b6-a766-f61037f230cb" />
 		<logger level="INFO" doc:name="Logger" doc:id="2e67e246-4148-4664-8471-e90520d7b1a9" message="#[payload]"/>
 	</flow>
+	<flow name="projectFlow1" doc:id="c42e7acc-3145-445a-9ff4-ca559246c6b6" >
+		<http:listener doc:name="Listener" doc:id="578f3d35-6772-4933-88b4-897b4aa761ef" config-ref="HTTP_Listener_config" path="/app1"/>
+		<set-payload value="#['Dayum']" doc:name="Set Payload" doc:id="91214331-ecb4-4bd3-b3e1-e7dd5b63817a" />
+		<logger level="INFO" doc:name="Logger" doc:id="c4118c99-19b5-416a-b6a1-ec8f1f870db3" message="#[payload]"/>
+	</flow>
 </mule>
